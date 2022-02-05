@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "aws_region": "us-east-1",
+    "django_settings": "todo.settings",
+    "profile_name": null,
+    "project_name": "todo",
+    "runtime": "python3.8",
+    "s3_bucket": "tasks-bucket12345",
+    "use_precompiled_packages": false
+  }
+}
