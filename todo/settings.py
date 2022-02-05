@@ -79,9 +79,8 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django_s3_sqlite",
-        "NAME": "sqlite_zappa.db",
-        "BUCKET": "tasks-bucket12345",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') ,
     }
 }
 DATETIME_FORMAT="%Y-%m-%d%H:%M:%S"

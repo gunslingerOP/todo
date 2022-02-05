@@ -8,7 +8,7 @@ from .serializer import *
 @api_view(['GET', 'POST'])
 def tasks_list(request):
     if request.method == 'GET':
-        data = Task.objects.all()
+        data = Task.active.all()
 
         serializer =TaskSerializer(data, context={'request': request}, many=True)
 
@@ -37,5 +37,6 @@ def task_detail(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        task.active = False
+        task.is_active = False
+        task.save(update_fields=['is_active'])
         return Response(status=status.HTTP_204_NO_CONTENT)
