@@ -20,5 +20,5 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/tasks/$', views.tasks_list),
-    re_path(r'^api/tasks/([0-9])$', views.task_detail),
+    path('api/tasks/<int:pk>', views.task_detail),
 ]
